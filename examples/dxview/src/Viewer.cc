@@ -1058,6 +1058,7 @@ void Viewer::buildMeshes() {
           ComPtr<ID3DBlob> pPS;
           hr = compileShaderFromFile(DXVIEW_RES_DIR "/lighting.hlsl", pDefinces,
                                      "ps_5_1", &pPS);
+          assert(SUCCEEDED(hr));
 
           auto inputElementDescs = buildInputElementDescs(attributes);
 
@@ -1140,6 +1141,7 @@ void Viewer::buildMeshes() {
           ComPtr<ID3DBlob> pPS;
           hr = compileShaderFromFile(DXVIEW_RES_DIR "/gray.hlsl", pDefinces,
                                      "ps_5_1", &pPS);
+          assert(SUCCEEDED(hr));
 
           auto inputElementDescs = buildInputElementDescs(attributes);
 
