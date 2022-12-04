@@ -1048,15 +1048,15 @@ void Viewer::buildMeshes() {
 
         {
           auto defines = buildDefines(attributes);
-          auto pDefinces = defines.empty() ? nullptr : &defines[0];
+          auto pDefines = defines.empty() ? nullptr : &defines[0];
 
           ComPtr<ID3DBlob> pVS;
           hr = compileShaderFromFile(DXVIEW_RES_DIR "/primitive.hlsl",
-                                     pDefinces, "vs_5_1", &pVS);
+                                     pDefines, "vs_5_1", &pVS);
           assert(SUCCEEDED(hr));
 
           ComPtr<ID3DBlob> pPS;
-          hr = compileShaderFromFile(DXVIEW_RES_DIR "/lighting.hlsl", pDefinces,
+          hr = compileShaderFromFile(DXVIEW_RES_DIR "/lighting.hlsl", pDefines,
                                      "ps_5_1", &pPS);
 
           auto inputElementDescs = buildInputElementDescs(attributes);
@@ -1130,15 +1130,15 @@ void Viewer::buildMeshes() {
 
         {
           auto defines = buildDefines(attributes);
-          auto pDefinces = defines.empty() ? nullptr : &defines[0];
+          auto pDefines = defines.empty() ? nullptr : &defines[0];
 
           ComPtr<ID3DBlob> pVS;
           hr = compileShaderFromFile(DXVIEW_RES_DIR "/primitive.hlsl",
-                                     pDefinces, "vs_5_1", &pVS);
+                                     pDefines, "vs_5_1", &pVS);
           assert(SUCCEEDED(hr));
 
           ComPtr<ID3DBlob> pPS;
-          hr = compileShaderFromFile(DXVIEW_RES_DIR "/gray.hlsl", pDefinces,
+          hr = compileShaderFromFile(DXVIEW_RES_DIR "/gray.hlsl", pDefines,
                                      "ps_5_1", &pPS);
 
           auto inputElementDescs = buildInputElementDescs(attributes);
